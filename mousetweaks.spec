@@ -1,11 +1,11 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Name:		mousetweaks
-Version:	2.22.0
-Release:	2
+Version:	2.22.1
+Release:	1
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.22/%{name}-%{version}.tar.bz2
-# Source0-md5:	a7715512c7ffdec65ead7a251609d0f5
+# Source0-md5:	16ef7e51728c27c7ea3378a9f296f352
 URL:		http://live.gnome.org/Mousetweaks/Home
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	at-spi-devel >= 1.22.0
