@@ -1,11 +1,11 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Name:		mousetweaks
-Version:	2.23.90
+Version:	2.23.91
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.23/%{name}-%{version}.tar.bz2
-# Source0-md5:	bad3340e7d8b7cd34b599ee41a74e6c0
+# Source0-md5:	3805fdd9bd4723f740b48a62ee333a7a
 URL:		http://live.gnome.org/Mousetweaks/Home
 BuildRequires:	GConf2-devel >= 2.22.0
 BuildRequires:	at-spi-devel >= 1.22.0
@@ -18,7 +18,6 @@ BuildRequires:	gnome-panel-devel >= 2.22.0
 BuildRequires:	gtk+2-devel >= 2:2.12.8
 BuildRequires:	intltool >= 0.36.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.22.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.198
 Requires(post,preun):	GConf2
@@ -49,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name} --with-gnome
+%find_lang %{name} --with-gnome --with-omf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
