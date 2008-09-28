@@ -1,25 +1,26 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Name:		mousetweaks
-Version:	2.22.3
+Version:	2.24.0
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.22/%{name}-%{version}.tar.bz2
-# Source0-md5:	bf36afbea857e49d32e5aefc29f94440
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.24/%{name}-%{version}.tar.bz2
+# Source0-md5:	0d65ed828b1ef092861e337d2c86cc72
 URL:		http://live.gnome.org/Mousetweaks/Home
-BuildRequires:	GConf2-devel >= 2.22.0
-BuildRequires:	at-spi-devel >= 1.22.0
+BuildRequires:	GConf2-devel >= 2.24.0
+BuildRequires:	at-spi-devel >= 1.24.0
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	gettext-devel
-BuildRequires:	gnome-doc-utils >= 0.12.0
-BuildRequires:	gnome-panel-devel >= 2.22.0
-BuildRequires:	gtk+2-devel >= 2:2.12.8
-BuildRequires:	intltool >= 0.36.0
+BuildRequires:	gnome-common >= 2.24.0
+BuildRequires:	gnome-doc-utils >= 0.14.0
+BuildRequires:	gnome-panel-devel >= 2.24.0
+BuildRequires:	gtk+2-devel >= 2:2.14.0
+BuildRequires:	intltool >= 0.40.0
 BuildRequires:	libglade2-devel >= 1:2.6.2
-BuildRequires:	libgnomeui-devel >= 2.22.0
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.198
 Requires(post,preun):	GConf2
 Requires:	libgail-gnome
@@ -49,7 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name} --with-gnome
+%find_lang %{name} --with-gnome --with-omf
 
 %clean
 rm -rf $RPM_BUILD_ROOT
