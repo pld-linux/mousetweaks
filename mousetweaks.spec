@@ -1,11 +1,11 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Name:		mousetweaks
-Version:	2.24.0
+Version:	2.24.1
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	0d65ed828b1ef092861e337d2c86cc72
+# Source0-md5:	77df15129778f70b9102f86d0df1f615
 URL:		http://live.gnome.org/Mousetweaks/Home
 BuildRequires:	GConf2-devel >= 2.24.0
 BuildRequires:	at-spi-devel >= 1.24.0
@@ -41,7 +41,8 @@ accessibility.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-schemas-install
 %{__make}
 
 %install
