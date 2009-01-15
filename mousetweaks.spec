@@ -1,4 +1,5 @@
 Summary:	Mouse accessibility enhancements for GNOME
+Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
 Version:	2.24.3
 Release:	1
@@ -31,6 +32,11 @@ The mousetweaks package provides the functions offered by the
 Accessibility tab of the Mouse control panel of the GNOME Control
 Center. It also contains two panel applets related to the mouse
 accessibility.
+
+%description -l pl.UTF-8
+Pakiet mousetweaks udostępnia funkcje oferowane przez zakładkę
+Dostępność w panelu sterowania myszy w Centrum Sterowania GNOME.
+Zawiera także dwa aplety panelu związane z dostępnością myszy.
 
 %prep
 %setup -q
