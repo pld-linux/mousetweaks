@@ -1,25 +1,24 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
-Version:	2.24.3
+Version:	2.25.91
 Release:	1
 License:	GPL v3
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.24/%{name}-%{version}.tar.bz2
-# Source0-md5:	de428acfdbf671007c23d0a18f0a9f96
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.25/%{name}-%{version}.tar.bz2
+# Source0-md5:	db6e6d50d18006f1fddebcc1609e5981
 URL:		http://live.gnome.org/Mousetweaks/Home
-BuildRequires:	GConf2-devel >= 2.24.0
-BuildRequires:	at-spi-devel >= 1.24.0
+BuildRequires:	GConf2-devel >= 2.25.0
+BuildRequires:	at-spi-devel >= 1.25.0
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gnome-panel-devel >= 2.24.0
-BuildRequires:	gtk+2-devel >= 2:2.14.0
+BuildRequires:	gnome-panel-devel >= 2.25.90
+BuildRequires:	gtk+2-devel >= 2:2.15.0
 BuildRequires:	intltool >= 0.40.0
-BuildRequires:	libglade2-devel >= 1:2.6.2
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.198
