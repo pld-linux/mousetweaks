@@ -4,7 +4,7 @@ Name:		mousetweaks
 Version:	2.25.91
 Release:	1
 License:	GPL v3
-Group:		X11/Applications
+Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.25/%{name}-%{version}.tar.bz2
 # Source0-md5:	db6e6d50d18006f1fddebcc1609e5981
 URL:		http://live.gnome.org/Mousetweaks/Home
