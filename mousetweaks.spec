@@ -1,32 +1,29 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
-Version:	2.32.1
+Version:	2.91.91
 Release:	1
 License:	GPL v3
 Group:		X11/Applications/Accessibility
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.32/%{name}-%{version}.tar.bz2
-# Source0-md5:	1af7be870e0b8df9b0a2d481f77c7be5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/2.91/%{name}-%{version}.tar.bz2
+# Source0-md5:	3d8c899341ae930425518dfbd9f99295
 URL:		http://live.gnome.org/Mousetweaks/Home
-BuildRequires:	GConf2-devel >= 2.24.0
-BuildRequires:	at-spi-devel >= 1.26.0
-BuildRequires:	autoconf >= 2.57
-BuildRequires:	automake >= 1:1.9
-BuildRequires:	dbus-glib-devel >= 0.74
+BuildRequires:	autoconf >= 2.63
+BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
+BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gnome-panel-devel >= 2.26.0
-BuildRequires:	gtk+2-devel >= 2:2.16.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 2.91.90
+BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
-BuildRequires:	rpmbuild(macros) >= 1.198
-BuildRequires:	sed >= 4.0
+BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	xorg-lib-libXtst-devel
-Requires(post,preun):	GConf2
-Requires:	libgail-gnome
+Requires(post,preun):	glib2 >= 1:2.26.0
+Requires:	gsettings-desktop-schemas >= 2.91.90
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,9 +40,6 @@ Zawiera także dwa aplety panelu związane z dostępnością myszy.
 %prep
 %setup -q
 
-sed -i -e 's/^en@shaw//' po/LINGUAS
-rm -f po/en@shaw.po
-
 %build
 %{__intltoolize}
 %{__aclocal}
@@ -53,7 +47,7 @@ rm -f po/en@shaw.po
 %{__autoheader}
 %{__automake}
 %configure \
-	--disable-schemas-install \
+	--disable-schemas-compile \
 	--disable-silent-rules
 %{__make}
 
@@ -69,24 +63,17 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%gconf_schema_install mousetweaks.schemas
-%gconf_schema_install pointer-capture-applet.schemas
+%glib_compile_schemas
 
-%preun
-%gconf_schema_uninstall mousetweaks.schemas
-%gconf_schema_uninstall pointer-capture-applet.schemas
+%postun
+%glib_compile_schemas
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
-%attr(755,root,root) %{_bindir}/dwell-click-applet
 %attr(755,root,root) %{_bindir}/mousetweaks
-%attr(755,root,root) %{_bindir}/pointer-capture-applet
-%{_sysconfdir}/gconf/schemas/mousetweaks.schemas
-%{_sysconfdir}/gconf/schemas/pointer-capture-applet.schemas
-%{_libdir}/bonobo/servers/DwellClick_Factory.server
-%{_libdir}/bonobo/servers/PointerCapture_Factory.server
+%{_datadir}/GConf/gsettings/mousetweaks.convert
+%{_datadir}/glib-2.0/schemas/org.gnome.mousetweaks.enums.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.mousetweaks.gschema.xml
 %{_datadir}/mousetweaks
-%{_mandir}/man1/dwell-click-applet.1*
 %{_mandir}/man1/mousetweaks.1*
-%{_mandir}/man1/pointer-capture-applet.1*
