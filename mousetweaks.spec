@@ -1,12 +1,12 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
-Version:	3.2.0
-Release:	2
+Version:	3.2.1
+Release:	1
 License:	GPL v3
 Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	100fd6ea3d7035b9c427321991af9747
+# Source0-md5:	cb2e32078d130da957d5a6a4c6e45641
 URL:		http://live.gnome.org/Mousetweaks/Home
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -15,7 +15,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
-BuildRequires:	gsettings-desktop-schemas-devel >= 3.0.0
+BuildRequires:	gsettings-desktop-schemas-devel >= 3.2.0
 BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	pkgconfig
@@ -28,7 +28,7 @@ BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,preun):	glib2 >= 1:2.26.0
-Requires:	gsettings-desktop-schemas >= 3.0.0
+Requires:	gsettings-desktop-schemas >= 3.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
