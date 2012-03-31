@@ -1,14 +1,14 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
-Version:	3.2.1
+Version:	3.4.0
 Release:	1
 License:	GPL v3
 Group:		X11/Applications/Accessibility
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/3.2/%{name}-%{version}.tar.xz
-# Source0-md5:	cb2e32078d130da957d5a6a4c6e45641
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/3.4/%{name}-%{version}.tar.xz
+# Source0-md5:	ad9ae52a52bffa683eb511e713c47c1c
 URL:		http://live.gnome.org/Mousetweaks/Home
-BuildRequires:	autoconf >= 2.63
+BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
 BuildRequires:	gettext-devel
