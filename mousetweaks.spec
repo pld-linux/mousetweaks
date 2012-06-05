@@ -1,12 +1,15 @@
+# TODO:
+# * Fix depracated schema paths, throws warnings on RPM install
+#
 Summary:	Mouse accessibility enhancements for GNOME
 Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
-Version:	3.4.1
+Version:	3.4.2
 Release:	1
 License:	GPL v3
 Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/3.4/%{name}-%{version}.tar.xz
-# Source0-md5:	2d3f626022e2017c3d353f2128329a9f
+# Source0-md5:	b0bf84767b6cc27c6df437c648ad9fc9
 URL:		http://live.gnome.org/Mousetweaks/Home
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
@@ -21,11 +24,11 @@ BuildRequires:	intltool >= 0.40.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.592
-BuildRequires:	xorg-lib-libXtst-devel
+BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXcursor-devel
 BuildRequires:	xorg-lib-libXfixes-devel
-BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xz
 Requires(post,preun):	glib2 >= 1:2.26.0
 Requires:	gsettings-desktop-schemas >= 3.2.0
