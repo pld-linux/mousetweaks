@@ -14,7 +14,7 @@ URL:		http://live.gnome.org/Mousetweaks/Home
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.26.0
 BuildRequires:	gnome-common >= 2.24.0
 BuildRequires:	gnome-doc-utils >= 0.14.0
