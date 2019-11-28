@@ -4,23 +4,20 @@
 Summary:	Mouse accessibility enhancements for GNOME
 Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
-Version:	3.12.0
-Release:	2
+Version:	3.32.0
+Release:	1
 License:	GPL v3
 Group:		X11/Applications/Accessibility
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	08799c2059b40bf3275e7f69a62eb144
-URL:		http://live.gnome.org/Mousetweaks/Home
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/3.32/%{name}-%{version}.tar.xz
+# Source0-md5:	aa671b0c7278a92c12f061d129af1454
+URL:		https://wiki.gnome.org/Projects/Mousetweaks
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake >= 1:1.11
 BuildRequires:	docbook-dtd412-xml
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.8
 BuildRequires:	glib2-devel >= 1:2.26.0
-BuildRequires:	gnome-common >= 2.24.0
-BuildRequires:	gnome-doc-utils >= 0.14.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.2.0
 BuildRequires:	gtk+3-devel >= 3.0.0
-BuildRequires:	intltool >= 0.40.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(find_lang) >= 1.23
 BuildRequires:	rpmbuild(macros) >= 1.592
@@ -31,6 +28,7 @@ BuildRequires:	xorg-lib-libXfixes-devel
 BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xz
 Requires(post,preun):	glib2 >= 1:2.26.0
+Requires:	glib2 >= 1:2.26.0
 Requires:	gsettings-desktop-schemas >= 3.2.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -49,8 +47,7 @@ Zawiera także dwa aplety panelu związane z dostępnością myszy.
 %setup -q
 
 %build
-%{__intltoolize}
-%{__aclocal}
+%{__aclocal} -I m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
@@ -65,7 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%find_lang %{name} --with-gnome --with-omf
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
