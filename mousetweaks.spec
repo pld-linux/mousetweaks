@@ -1,12 +1,9 @@
-# TODO:
-# * Fix depracated schema paths, throws warnings on RPM install
-#
 Summary:	Mouse accessibility enhancements for GNOME
 Summary(pl.UTF-8):	Rozszerzenia dostępności myszy dla GNOME
 Name:		mousetweaks
 Version:	3.32.0
 Release:	1
-License:	GPL v3
+License:	GPL v3+
 Group:		X11/Applications/Accessibility
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/mousetweaks/3.32/%{name}-%{version}.tar.xz
 # Source0-md5:	aa671b0c7278a92c12f061d129af1454
